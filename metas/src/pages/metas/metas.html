@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ categoriaMetas?.categoria | uppercase }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card *ngFor="let meta of categoriaMetas.metas; let i = index">
+      <ion-card-header>
+        #{{ i + 1 }}
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ meta.texto}}</p>
+        <p class="autor">{{ meta.autor}}</p>
+      </ion-card-content>
+      <ion-row>
+        <ion-col text-right>
+          <button ion-button clear small (click)="onSeleciona(meta)">
+            Selecionar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+
+</ion-content>
